@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <style>
+        .inputtext {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            font-size: 16px;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .tombol {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #3498db;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .login-box {
+            width: 350px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 30px;
+            width: 150px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <img class="logo" src="https://i.ibb.co.com/W95CykJ/logo-kemendes.png" alt="Logo">
+        <form onsubmit="return false;">
+            <input type="text" name="username" placeholder="Username" class="inputtext">
+            <input type="password" name="password" placeholder="Password" class="inputtext">
+            <input type="button" value="Login" class="tombol" onclick="login()">
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            const users = {
+                "pdrendang": { password: "rendang111", url: "https://docs.google.com/spreadsheets/d/1NA-Ddy-EJoe3MiNgXZS4pN-Kyyx-g6X7Shux54qhxTo/edit?usp=sharing" },
+                "pdsidemen": { password: "sidemen222", url: "https://docs.google.com/spreadsheets/d/1v0ifrpEBnfuFC-mBg-zeGEPv_PvLWq1w7PUca195raE/edit?usp=sharing" },
+                "pdmanggis": { password: "manggis233", url: "https://docs.google.com/spreadsheets/d/1AONeh03QINIv7l9NqKtGnpABZ0MYy0qCtZQ9UDqGNNE/edit?usp=sharing" },
+                "pdkarangasem": { password: "karangasem224", url: "https://docs.google.com/spreadsheets/d/1ffOHmlvDx0fxEk7mG5Un_FZeBruCg-qJdo05HTwWzzc/edit?usp=sharing" },
+                "pdabang": { password: "abang235", url: "https://docs.google.com/spreadsheets/d/1DENtYXiXbA6HhOob7-arZrSUZRYIKAsq0Ctr_TTrTFs/edit?usp=sharing" },
+                "pdbebandem": { password: "bebandem126", url: "https://docs.google.com/spreadsheets/d/1wZKWpX92O-2NnoWI05DR9a56eQL_CjOODAslN4to1Ck/edit?usp=sharing" },
+                "pdselat": { password: "selat127", url: "https://docs.google.com/spreadsheets/d/10pkZm6z7GGJtP7PTOhGAJINp1NJgg-dHFl4PC4vj5TQ/edit?usp=sharing" },
+                "pdkubu": { password: "kubu228", url: "https://docs.google.com/spreadsheets/d/12vDb2OvYjF94TMSiDysW7rfJELWwAmxe_NFKUBe02TE/edit?usp=sharing" },
+                "tapm": { password: "tapm607", url: "https://docs.google.com/spreadsheets/d/1iK-NzErdMlL2zAaKCVMcSM8tU6Y4INbmSwpK6tqvj-0/edit?usp=sharing" }
+            };
+
+            const username = document.getElementsByName("username")[0].value.trim();
+            const password = document.getElementsByName("password")[0].value.trim();
+
+            if (!username || !password) {
+                alert("Silakan isi username dan password.");
+                return;
+            }
+
+            if (users[username] && users[username].password === password) {
+                window.open(users[username].url, "_blank", "fullscreen=yes");
+            } else {
+                alert("Username atau password salah!");
+            }
+        }
+    </script>
+</body>
+</html>
